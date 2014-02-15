@@ -3,7 +3,7 @@
 LOGFILE=/var/log/logio/harvester.log
 # Update the following line with the path to log.io-harvester
 COMMAND=/home/logio/node_modules/log.io/bin/log.io-harvester
-PIDFILE=/var/run/logio/logio-harvester.pid
+PIDFILE=/var/run/logio/log.io-harvester.pid
 
 nohup $COMMAND >> $LOGFILE 2>&1 &
 STATUS=$?
