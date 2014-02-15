@@ -1,7 +1,7 @@
 logio-initscript
 ================
 
-Log.io server and harvester init scripts for CentOS 6.4
+Log.io server and harvester init scripts for Debian
 
 
 Installation
@@ -11,22 +11,25 @@ Installation
 
 Add a new user for log.io. Run the following commands as root.
 
-    useradd logio
-    usermod -Glogio,adm,compiler logio
+    useradd -d /home/logio logio
+    usermod -Glogio,adm logio
+    mkdir /home/logio
+    chown logio /home/logio
 
 Install nodejs and npm, if not already installed
 
-    yum install nodejs npm
-	
+    sudo apt-get install git-core curl build-essential openssl libssl-dev
+    git clone https://github.com/joyent/node.git
+    cd node
+    # now go to nodejs website and find out which version is latest Stable.
+    git checkout v0.10.25
+  
 Login as user logio and install log.io
 
     su - logio
 	npm install log.io
-
-You can now remove user logio from compiler group
-
-    exit # to go back to root shell
-	usermod -Glogio,adm logio
+	
+   exit # to go back to root shell
 	
 ## Init Script ##
 
