@@ -1,4 +1,4 @@
-logio-initscript
+logio-initscript-Debian
 ================
 
 Log.io server and harvester init scripts for Debian
@@ -48,8 +48,10 @@ Change the ownership of the newly created directories to the user running Log.io
 Edit the wrapper scripts (available in `wrapper-scripts` directory) and update the `COMMAND` variable to point to the log.io scripts. 
 If you followed the above steps for installing log.io, then this step is not required.
 
-Copy the files to `/usr/local/bin` or any other location of your choice.
-
+Copy the files to `/usr/local/bin`
+    
+    cp wrapper-scripts/log.io-harvester /usr/local/bin/
+    
 Edit the init scripts (available under `init.d` directory) and update the `WRAPPERSCRIPT` variable 
 to point to the location of the corresponding wrapper script. If you copied the files to /usr/local/bin, then this step is not required.
 
