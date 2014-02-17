@@ -13,6 +13,7 @@ Add a new user for log.io. Run the following commands as root.
 
     useradd -d /home/logio logio
     usermod -Glogio,adm logio
+    usermod logio -s /bin/bash
     mkdir /home/logio
     chown logio /home/logio
 
@@ -23,11 +24,12 @@ Install nodejs and npm, if not already installed
     cd node
     # now go to nodejs website and find out which version is latest Stable.
     git checkout v0.10.25
+Install node.js: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
   
 Login as user logio and install log.io
 
     su - logio
-	npm install log.io
+    npm install log.io
 	
    exit # to go back to root shell
 	
